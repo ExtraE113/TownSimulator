@@ -6,7 +6,7 @@ import static town.Universe.persons;
 public class Person {
 	static Random randomGenerator = new Random();
 	static int personality;
-	public static int opinions[] = new int[persons.length];
+	public static double opinions[] = new double[persons.length];
 	public static void main(String[] args) {
 	}
 	static void genIndependent(){
@@ -20,6 +20,9 @@ public class Person {
 	public static void generate(){
 		genIndependent();
 		genDependent();
+	}
+	public static void interact(int who, int size){
+
 	}
 }
 

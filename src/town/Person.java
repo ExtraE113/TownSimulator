@@ -21,8 +21,13 @@ public class Person {
 		genIndependent();
 		genDependent();
 	}
-	public static void interact(int who, int size){
-
+	public static void interact(int who, double size){
+		int x = randomGenerator.nextInt(2);
+		if(x < 1) {
+			opinions[who] = opinions[who] + randomGenerator.nextDouble(size);
+		}else{
+			opinions[who] = opinions[who] - randomGenerator.nextDouble(size);
+		}
 	}
 }
 

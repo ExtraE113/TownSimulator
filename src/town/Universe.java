@@ -6,8 +6,7 @@ public class Universe {
 		if(!thereWasLight) {
 			for(int i = 0; i < persons.length; i++) {
 				Universe universe = new Universe();
-				persons[i].genIndependent();
-				persons[i].genDependent();
+				persons[i].generate();
 			}
 		}
 	}

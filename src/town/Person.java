@@ -7,8 +7,6 @@ public class Person {
 	static Random randomGenerator = new Random();
 	static int personality;
 	public static double opinions[] = new double[persons.length];
-	public static void main(String[] args) {
-	}
 	static void genIndependent(){
 			personality = randomGenerator.nextInt(100);
 	}

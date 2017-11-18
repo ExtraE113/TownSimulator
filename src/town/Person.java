@@ -23,9 +23,9 @@ public class Person {
 	}
 	public static void interact(int who, double size){
 		if(opinions[who] > 50) {
-			opinions[who] = opinions[who] + randomGenerator.nextDouble(size);
+			opinions[who] = opinions[who] + randomGenerator.nextDouble()*size;
 		}else{
-			opinions[who] = opinions[who] - randomGenerator.nextDouble(size);
+			opinions[who] = opinions[who] - randomGenerator.nextDouble()*size;
 		}
 	}
 }

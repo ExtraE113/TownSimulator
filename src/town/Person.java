@@ -13,7 +13,7 @@ public class Person {
 	}
 	public static void genDependent() {
 		for(int i = 0; i < opinions.length; i++){
-			opinions[i] = personality - persons[i].personality;
+			opinions[i] = (1/personality - persons[i].personality)*100;
 		}
 	}
 }

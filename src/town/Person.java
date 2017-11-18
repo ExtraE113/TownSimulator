@@ -3,7 +3,6 @@ import java.util.Random;
 import static town.Universe.persons;
 
 public class Person {
-	static int opinion[] = new int[10];
 	static Random randomGenerator = new Random();
 	static int personality;
 	static int opinions[] = new int[persons.length];
@@ -13,6 +12,8 @@ public class Person {
 			personality = randomGenerator.nextInt(100);
 	}
 	public static void genDependent() {
-
+		for(int i = 0; i < opinions.length; i++){
+			opinions[i] = personality - persons[i].personality;
+		}
 	}
 }

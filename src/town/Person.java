@@ -9,7 +9,7 @@ public class Person {
 	static int opinions[] = new int[persons.length];
 	public static void main(String[] args) {
 	}
-	public static void genIndepentdent(){
+	public static void genIndependent(){
 			personality = randomGenerator.nextInt(100);
 	}
 	public static void genDependent() {

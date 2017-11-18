@@ -12,12 +12,8 @@ public class Person {
 	}
 	static void genDependent() {
 		for (int i = 0; i < opinions.length; i++) {
-			opinions[i] = abs((1 / (personality - persons[i].personality)) * 100);
+			opinions[i] = abs((1 / ((personality - persons[i].personality)+1) * 100);
 		}
-	}
-	public static void generate(){
-		genIndependent();
-		genDependent();
 	}
 	public static void interact(int who, double size){
 		if(opinions[who] > 50) {
@@ -27,4 +23,3 @@ public class Person {
 		}
 	}
 }
-

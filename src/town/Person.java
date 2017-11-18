@@ -1,5 +1,6 @@
 package town;
 import java.util.Random;
+import static java.lang.Math.abs;
 import static town.Universe.persons;
 
 public class Person {
@@ -13,7 +14,7 @@ public class Person {
 	}
 	static void genDependent() {
 		for (int i = 0; i < opinions.length; i++) {
-			opinions[i] = (1 / personality - persons[i].personality) * 100;
+			opinions[i] = abs((1 / personality - persons[i].personality) * 100);
 		}
 	}
 	public static void generate(){

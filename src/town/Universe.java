@@ -18,8 +18,8 @@ public class Universe {
 			int person1 = random.nextInt(numPeople);
 			int person2 = random.nextInt(numPeople);
 			int size = random.nextInt(5);
-			persons[person1].interact(person2, size);
-			persons[person2].interact(person1, size);
+			persons[person1].interact(person2, size, person1);
+			persons[person2].interact(person1, size, person2);
 		}
 	}
     public static void generate(){

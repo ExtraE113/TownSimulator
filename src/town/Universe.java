@@ -1,12 +1,10 @@
 package town;
-
-import java.util.Random;
 import java.util.Scanner;
+import static town.Rand.*;
 
 public class Universe {
 	static Person[] persons;
 	public static void main(String[] args) {
-		Random random = new Random();
 		Scanner in = new Scanner(System.in);
 		System.out.println("How many people exist in this Universe?");
 		int numPeople = in.nextInt();
@@ -15,9 +13,9 @@ public class Universe {
 		int numFrames = in.nextInt();
 		generate();
 		for(int i = 0; i<numFrames; i++){
-			int person1 = random.nextInt(numPeople);
-			int person2 = random.nextInt(numPeople);
-			int size = random.nextInt(5);
+			int person1 = randint(numPeople);
+			int person2 = randint(numPeople);
+			int size = randint(5);
 			persons[person1].interact(person2, size, person1);
 			persons[person2].interact(person1, size, person2);
 		}
@@ -27,7 +25,7 @@ public class Universe {
             persons[i].genIndependent();
         }
         for(int i = 0; i < persons.length; i++) {
-            persons[i].genDependent();
+            persons[i].genDependent(i);
         }
     }
 }

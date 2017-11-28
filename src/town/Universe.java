@@ -18,6 +18,7 @@ public class Universe{ //I honestly don't know what this means
 			persons[i].genIndependent();
 		}
 		for(int i = 0; i < numPeople; i++) {
+			System.out.println("Person" + i + "s personality is " + persons[i].personality);
 			persons[i].genDependent(i);
 		}
 		System.out.println("For how many epochs would you like this Universe to exist?"); //Ask the user the number of frames

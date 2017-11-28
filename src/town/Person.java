@@ -1,19 +1,19 @@
-package town;
+package town; //Puts this in the "town" package
 
-import static java.lang.Math.abs;
-import static town.Rand.*;
-import static town.Universe.persons;
+import static java.lang.Math.abs; //Let me use absolute value operation
+import static town.Rand.*; //Allow the use of the Rand class
+import static town.Universe.persons; //Let me access other people
 
 class Person {
-    static int personality;
-    static double opinions[] = new double[persons.length];
+    int personality; //Make a spot for me to hold my personality
+    double opinions[] = new double[persons.length]; //Make spots for me to hold my opinions of others
 
-    static void genIndependent() {
-        personality = randint(100);
-        System.out.println("personality generated: " + personality);
+    void genIndependent() { //create a function to generate independent things
+        personality = randint(100); //Create my personality
+        System.out.println("personality generated: " + personality); //Look, user, I made my personality!
     }
 
-    static void genDependent(int me) {
+    void genDependent(int me) { //Create a function to generate
         for (int i = 0; i < opinions.length; i++) {
             if (abs(personality - persons[i].personality) == 0) {
                 opinions[i] = 100;
@@ -26,7 +26,7 @@ class Person {
         }
     }
 
-    static void interact(int who, double size, int me) {
+    void interact(int who, double size, int me) {
         if (abs(opinions[who] - persons[who].opinions[me]) >= 40) {
             opinions[who] = persons[who].opinions[me];
             System.out.println("The truth came out: Due to wildly differing opinions, " + me + "'s opinion was changed to " + who + "'s, resulting in equal opinions of " + opinions[who]);

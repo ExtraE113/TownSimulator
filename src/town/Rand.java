@@ -1,13 +1,13 @@
-package town;
-import java.util.Random;
+package town; //I'm in the town package
+import java.util.Random; //Let me make random numbers
 
-public class Rand {
-    public static int randint(int bound) {
-        Random randomGenerator = new Random();
-        return (randomGenerator.nextInt(bound));
+public class Rand { //I honestly don't know what this does
+    public static int randint(int bound) { //create a function for generating random ints
+        Random randomGenerator = new Random(); //create a random generator
+        return (randomGenerator.nextInt(bound)); //and get a random number
     }
-    public static double randdouble() {
-        Random randomGenerator = new Random();
-        return (randomGenerator.nextDouble());
+    public static double randdouble() { //create a function for generating random doubles
+        Random randomGenerator = new Random(); //Create a random generator
+        return (randomGenerator.nextDouble()); //and get a random double btwn 0 and 1
     }
 }

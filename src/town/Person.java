@@ -25,7 +25,15 @@ class Person {
             System.out.println("My opinion: " + opinions[i]);
         }
     }
-
+    public static Person generate(Person person){ //I honestly don't know what this means
+        for(int i = 0; i < persons.length; i++){ //Have every person...
+            person.genIndependent(); //... generate their independent values
+        }
+        for(int i = 0; i < persons.length; i++) { // Have every person...
+            person.genDependent(i); // Generate their dependent values
+        }
+        return person;
+    }
     void interact(int who, double size, int me) { //Create function for interaction
         if (abs(opinions[who] - persons[who].opinions[me]) >= 40) { //If our opinions are very different set them to be equal
             opinions[who] = persons[who].opinions[me];

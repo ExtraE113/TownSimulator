@@ -19,7 +19,7 @@ class Person {
                 if (personality- persons[i].personality == 0) { //If we're exactly the same
                     opinions[i] = 100; //have an opinion of 100
                 } else { //Otherwise,
-                    opinions[i] = abs(personality - persons[i].personality) * 100; //Calculate how close our personalities are and set our opinion to be greater if they're closer, and lower if they're further
+                    opinions[i] = abs(personality - persons[i].personality); //Calculate how close our personalities are and set our opinion to be greater if they're closer, and lower if they're further
                 }
                 System.out.println(me + "'s personality (me) : " + personality); //Look, user, I calculated an opinion!
                 System.out.println(i + "'s personality: " + persons[i].personality);

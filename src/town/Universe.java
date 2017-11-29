@@ -14,7 +14,14 @@ public class Universe { //I honestly don't know what this means
         System.out.println("How many people exist in this Universe?"); //Ask the user how many people to make
         int numPeople = in.nextInt(); //Get user input
         persons = new Person[numPeople]; //create the requested number of people
-        gen();
+        for (int i = 0; i < numPeople; i++) {
+            persons[i] = new Person();
+            persons[i].genIndependent();
+        }
+        for (int i = 0; i < numPeople; i++) {
+            System.out.println("Person" + i + "s personality is " + persons[i].personality);
+            persons[i].genDependent(i);
+        }
         System.out.println("For how many epochs would you like this Universe to exist?"); //Ask the user the number of frames
         int numFrames = in.nextInt(); //set the number of frames as requested
         for (int i = 0; i < numFrames; i++) { //Run the heart of the simulation
@@ -25,16 +32,5 @@ public class Universe { //I honestly don't know what this means
             persons[person2].interact(person1, size, person2); //Have the people interact
         }
     }
-
-    static void gen() {
-        for (int i = 0; i < numPeople; i++) {
-            persons[i] = new Person();
-            persons[i].genIndependent();
-        }
-        for (int i = 0; i < numPeople; i++) {
-            System.out.println("Person" + i + "s personality is " + persons[i].personality);
-            persons[i].genDependent(i);
-        }
-    }
-
 }
+

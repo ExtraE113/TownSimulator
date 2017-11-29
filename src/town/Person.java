@@ -5,15 +5,15 @@ import static town.Rand.*; //Allow the use of the Rand class
 import static town.Universe.persons; //Let me access other people
 
 class Person {
-    static int personality; //Make a spot for me to hold my personality
-    static double opinions[] = new double[persons.length]; //Make spots for me to hold my opinions of others
+    int personality; //Make a spot for me to hold my personality
+    double opinions[] = new double[persons.length]; //Make spots for me to hold my opinions of others
 
-    public static void genIndependent() { //create a function to generate independent things
+    public void genIndependent() { //create a function to generate independent things
         personality = randint(100); //Create my personality
         System.out.println("personality generated: " + personality); //Look, user, I made my personality!
     }
 
-    public static void genDependent(int me) { //Create a function to generate dependent
+    public void genDependent(int me) { //Create a function to generate dependent
         for (int i = 0; i < opinions.length; i++) { //Do this for everyone
             if (me != i) {
                 if (personality- persons[i].personality == 0) { //If we're exactly the same
@@ -27,15 +27,7 @@ class Person {
             }
         }
     }
-  /*  public static Person generate(Person person){ //I honestly don't know what this means
-        for(int i = 0; i < persons.length; i++){ //Have every person...
-            person.genIndependent(); //... generate their independent values
-        }
-        for(int i = 0; i < persons.length; i++) { // Have every person...
-            person.genDependent(i); // Generate their dependent values
-        }
-        return person;
-    }*/
+
     void interact(int who, double size, int me) { //Create function for interaction
         if (abs(opinions[who] - persons[who].opinions[me]) >= 40) { //If our opinions are very different set them to be equal
             opinions[who] = persons[who].opinions[me];
